@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HouseRow from "./houseRow";
 
 const houseArray = [
@@ -18,6 +18,14 @@ const houseArray = [
 
 const HouseList = () => {
     const [houses, setHouses] = useState(houseArray);
+
+    useEffect(() => {
+        (async () => {
+            const response = await fetch("/api/houses");
+            const houses = await response.json();
+            setHouses(houses);
+        })();
+    }, []);
 
     const addHouse = () => {
         setHouses([...houses, {
