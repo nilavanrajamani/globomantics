@@ -88,6 +88,12 @@
       "bidder": "Nilavan",
       "amount": 30,
       "id": 15
+    },
+    {
+      "houseId": 1,
+      "bidder": "John",
+      "amount": 23,
+      "id": 16
     }
   ]
 }
